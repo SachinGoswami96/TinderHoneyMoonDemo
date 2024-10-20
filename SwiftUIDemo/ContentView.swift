@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  SwiftUIDemo
 //
-//  Created by Mac on 14/10/24.
+//  Created by Sachin Goswami on 14/10/24.
 //
 
 import SwiftUI
