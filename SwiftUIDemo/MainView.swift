@@ -1,16 +1,17 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  SwiftUIDemo
 //
-//  Created by Sachin Goswami on 14/10/24.
+//  Created by Sachin Goswami on 25/10/24.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     
     @State var isShowGuide: Bool = false
     @State var isShowInfo: Bool = false
+    @State var isShowAlert: Bool = false
     
     @State var cards : [CardView] = {
         var cards = [CardView]()
@@ -77,7 +78,7 @@ struct ContentView: View {
                         .animation(.spring(), value: cardOffset)
                 }
             }
-            FooterView()
+            FooterView(isShowAlert: $isShowAlert)
         }
         .padding()
     }
@@ -96,5 +97,5 @@ struct ContentView: View {
        }
 }
 #Preview {
-    ContentView()
+    MainView()
 }

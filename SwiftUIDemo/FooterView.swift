@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FooterView: View {
+    @Binding var isShowAlert: Bool
     var body: some View {
         HStack (alignment: .center){
             Button {
@@ -21,6 +22,8 @@ struct FooterView: View {
             Spacer()
             Button {
                 print("Book Destination")
+                isShowAlert.toggle()
+                
             } label: {
                 Text("Book Destination")
                     .foregroundStyle(Color.red)
@@ -33,6 +36,10 @@ struct FooterView: View {
                             .stroke(Color.red, lineWidth: 3)
                     }
             }
+            .alert( isPresented: $isShowAlert) {
+                Alert(title: Text("Booking Successfully"),message: Text("Enjoy Your Honeymoon"),dismissButton: .default(Text("Okay")))
+            }
+
 
             Spacer()
             Button {
@@ -50,5 +57,6 @@ struct FooterView: View {
 }
 
 #Preview {
-    FooterView()
+    @Previewable @State var isShowAlert: Bool = false
+    FooterView(isShowAlert: $isShowAlert)
 }

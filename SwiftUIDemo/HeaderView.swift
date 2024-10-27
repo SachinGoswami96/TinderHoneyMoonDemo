@@ -48,7 +48,7 @@ struct HeaderView: View {
 }
 
 #Preview {
-    @State var isShowGuide: Bool = false
-    @State var isShowInfo: Bool = false
+    @Previewable @State var isShowGuide: Bool = false
+    @Previewable @State var isShowInfo: Bool = false
     HeaderView(isShowGuide: $isShowGuide, isShowInfo: $isShowInfo)
 }
